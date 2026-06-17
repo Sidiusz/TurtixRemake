@@ -1,2004 +1,2004 @@
 [
-  {
-    "name": "i1",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Collisions.png",
-    "cellW": 64,
-    "cellH": 64,
-    "mode": "cell"
-  },
-  {
-    "name": "i23982",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Bug_01.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24031",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_01.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24035",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_02.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24036",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_03.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24037",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_04.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i3",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Foreground.png",
-    "cellW": 128,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i23930",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i4",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_C_1.png",
-    "cellW": 256,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i24047",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i23908",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_N_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24048",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_N_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i1894",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Foreground.png",
-    "cellW": 128,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i1889",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24049",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i1892",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_C_1.png",
-    "cellW": 256,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i23912",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24050",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i23915",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_C_1.png",
-    "cellW": 256,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i6709",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_D_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24051",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_D_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i6713",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_N_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24052",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_N_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i9470",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24053",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i9473",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_C_1.png",
-    "cellW": 256,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i11228",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_N_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24054",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_N_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i15548",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Foreground.png",
-    "cellW": 128,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i18069",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24055",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i18072",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_C_1.png",
-    "cellW": 256,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i18073",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_N_1.png",
-    "cellW": 256,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i24056",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_N_2.png",
-    "cellW": 512,
-    "cellH": 256,
-    "mode": "cell"
-  },
-  {
-    "name": "i23943",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Foreground.png",
-    "cellW": 128,
-    "cellH": 128,
-    "mode": "cell"
-  },
-  {
-    "name": "i7",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Blockades.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i810",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Anim_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1895",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1896",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Blockades_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1897",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1898",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Blockades_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6716",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6717",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6718",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_03.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6719",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6722",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10352",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10353",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Blockades_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18077",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18078",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Blockades_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18079",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Anim_Blockades_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23926",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Teleports.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23954",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Anim_Water.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23979",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Blue.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23980",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Red.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23981",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Yellow.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i8",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Neutrals_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i9",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Neutrals_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1253",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Disturber.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23932",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Disturber_Anim.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1900",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1901",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i5315",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Neutral_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23960",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_03.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6721",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6720",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_03.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i6723",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Disturber.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i7939",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Neutrals_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i7940",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Neutrals_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10354",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10355",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10356",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_03.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i13056",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Disturber_Anim.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i14298",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Disturber.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i14299",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Anim_Neutral_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i14300",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Anim_Neutral_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18080",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18081",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18082",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_03.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18083",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Disturber.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i18084",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Disturber_Anim.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i10",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i11",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i12",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Jump.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i13",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_DoubleJump.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i17001",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_EndLevel.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23925",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23976",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Teleport.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24067",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24068",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Boring.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24071",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23952",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtle_Cage.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24069",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtle_Free.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23792",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23988",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23989",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24097",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23793",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23990",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23991",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23794",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23795",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23796",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23992",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23993",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23797",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23798",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23799",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23800",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23801",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23802",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23803",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23804",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23805",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23806",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23807",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23808",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24018",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Boss_Move.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24019",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Boss_StandHit.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24114",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Wasp_Fly.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24116",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24117",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24118",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24119",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23809",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23994",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23995",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23810",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23996",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23997",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23812",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23811",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23998",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23999",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23813",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Armadillo_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23814",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Armadillo_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23815",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23816",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23817",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23818",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23819",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23820",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24020",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Boss_Fire.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24021",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Boss_StandHit.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24077",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_LivingBush.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24105",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24122",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24123",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24124",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24125",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23821",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24000",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24001",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23822",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_StandFire.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23823",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24002",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24003",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23824",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23825",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24004",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24005",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23828",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23829",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23826",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23827",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23830",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Bat.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23831",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Bat_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24022",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Boss_Fire.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24023",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Boss_FlyHit.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i23832",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24006",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24007",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23834",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24008",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24009",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23866",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23835",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24010",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24011",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23867",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Fire.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23837",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23838",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23839",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23840",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23841",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23842",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23843",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23844",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23845",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23846",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23847",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23848",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23849",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23850",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23974",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Trap_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24024",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Boss_Move.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24025",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Boss_Hit.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24128",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23851",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24012",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24013",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23852",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24014",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24015",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23853",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Attack.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23854",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24016",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24017",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23868",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23869",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Fire.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23856",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23857",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23858",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23859",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23860",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Hit.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23861",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23862",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hegdehog_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23863",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hedgehog_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23864",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hegdehog_02_Move.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23865",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hedgehog_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24026",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Boss_Fire.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24027",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Boss_FlyHit.png",
-    "cellW": 192,
-    "cellH": 192,
-    "mode": "cell"
-  },
-  {
-    "name": "i24106",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Stand.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24107",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_01_Fly.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24110",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_01_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24109",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_02_Fly.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24108",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_02_Dead.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24083",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Wrona_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24084",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Wrona_02.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i15",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_PlatformJump_01.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24041",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_PlatformJump_01.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23941",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_PlatformJump_01.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i1668",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Platform_Move.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23933",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Platform_Move.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23934",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Platform_Move.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23935",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Platform_Move.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23936",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Platform_Move.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24075",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Platform.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23956",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Platform.png",
-    "cellW": 192,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i191",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Health.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22152",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_ExtraLife.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i16",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Blue.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i199",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Red.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i197",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Green.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i550",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Yellow.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22144",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Fiolet.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i193",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Blue.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i552",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Red.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22146",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Green.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22147",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Yellow.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22145",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Fiolet.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i195",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Blue.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i200",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Red.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22148",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Green.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22149",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Yellow.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i551",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Fiolet.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i196",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Blue.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i375",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Red.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i198",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Green.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22151",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Yellow.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i22150",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Fiolet.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24045",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Fireball.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i24095",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Amulet_Part.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24164",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_DoubleJump.png",
-    "cellW": 48,
-    "cellH": 48,
-    "mode": "cell"
-  },
-  {
-    "name": "i23972",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Trap_01.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i24079",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Trap.png",
-    "cellW": 96,
-    "cellH": 96,
-    "mode": "cell"
-  },
-  {
-    "name": "i23978",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Hit_Effect.png",
-    "cellW": 66,
-    "cellH": 22,
-    "mode": "cell"
-  },
-  {
-    "name": "i24044",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Fireball.png",
-    "cellW": 75,
-    "cellH": 42,
-    "mode": "cell"
-  },
-  {
-    "name": "i24099",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Snowball.png",
-    "cellW": 26,
-    "cellH": 25,
-    "mode": "cell"
-  },
-  {
-    "name": "i24103",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Papirus.png",
-    "cellW": 48,
-    "cellH": 25,
-    "mode": "cell"
-  },
-  {
-    "name": "i24132",
-    "png": "Assets/Sources/OriginalAssets/Graphics/Gui/Interface/HowToPlay_Arrow.png",
-    "cellW": 64,
-    "cellH": 64,
-    "mode": "cell"
-  },
-  {
-    "name": "i24134",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Enemy_Stun.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24136",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Enemy_Kick.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24138",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Cage.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24141",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Portal.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24143",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Fireball.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24145",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy01_Jump.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24146",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy01_Umbrela.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24150",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W2Enemy01_Spear.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24152",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Teleport_01.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24153",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Teleport_02.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24156",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy03.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24157",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy04.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24158",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Wasp.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24159",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W3Scorpion.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  },
-  {
-    "name": "i24166",
-    "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_DoubleJump.png",
-    "cellW": 180,
-    "cellH": 90,
-    "mode": "cell"
-  }
+ {
+  "name": "i1",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Collisions.png",
+  "cellW": 64,
+  "cellH": 64,
+  "mode": "cell"
+ },
+ {
+  "name": "i23982",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Bug_01.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24031",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_01.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24035",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_02.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24036",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_03.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24037",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/ButterFly_Foreground_04.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i3",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Foreground.png",
+  "cellW": 128,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i23930",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i4",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_C_1.png",
+  "cellW": 256,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i24047",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_D_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i23908",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_N_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24048",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Background_N_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i1894",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Foreground.png",
+  "cellW": 128,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i1889",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24049",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i1892",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_D_C_1.png",
+  "cellW": 256,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i23912",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24050",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i23915",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Background_N_C_1.png",
+  "cellW": 256,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i6709",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_D_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24051",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_D_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i6713",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_N_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24052",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Background_N_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i9470",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24053",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i9473",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_D_C_1.png",
+  "cellW": 256,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i11228",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_N_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24054",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Background_N_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i15548",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Foreground.png",
+  "cellW": 128,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i18069",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24055",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i18072",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_D_C_1.png",
+  "cellW": 256,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i18073",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_N_1.png",
+  "cellW": 256,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i24056",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Background_N_2.png",
+  "cellW": 512,
+  "cellH": 256,
+  "mode": "cell"
+ },
+ {
+  "name": "i23943",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Foreground.png",
+  "cellW": 128,
+  "cellH": 128,
+  "mode": "cell"
+ },
+ {
+  "name": "i7",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Blockades.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i810",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Anim_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1895",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1896",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Blockades_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1897",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1898",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Blockades_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6716",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6717",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6718",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Blockades_03.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6719",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6722",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10352",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10353",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Blockades_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18077",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18078",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Blockades_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18079",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Anim_Blockades_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23926",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Teleports.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23954",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Anim_Water.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23979",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Blue.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23980",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Red.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23981",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/Butterfly_Yellow.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i8",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Neutrals_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i9",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Neutrals_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1253",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Disturber.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23932",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Disturber_Anim.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1900",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1901",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i5315",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Anim_Neutral_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23960",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Neutrals_03.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6721",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6720",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Anim_Fire_03.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i6723",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Disturber.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i7939",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Neutrals_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i7940",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Neutrals_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10354",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10355",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10356",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Neutrals_03.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i13056",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Disturber_Anim.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i14298",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Disturber.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i14299",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Anim_Neutral_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i14300",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Anim_Neutral_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18080",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18081",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18082",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Neutrals_03.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18083",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Disturber.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i18084",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Disturber_Anim.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i10",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i11",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i12",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Jump.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i13",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_DoubleJump.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i17001",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_EndLevel.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23925",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23976",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Teleport.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24067",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24068",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Boring.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24071",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtix/Turtix_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23952",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtle_Cage.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24069",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Turtle_Free.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23792",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23988",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23989",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24097",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_01_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23793",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23990",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23991",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23794",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23795",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23796",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23992",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23993",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_03_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23797",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23798",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23799",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23800",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23801",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23802",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snail_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23803",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23804",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23805",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23806",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23807",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23808",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Snake_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24018",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Boss_Move.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24019",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Boss_StandHit.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24114",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Wasp_Fly.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24116",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24117",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24118",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24119",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_01/W1_Enemy_04_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23809",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23994",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23995",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23810",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23996",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23997",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23812",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_02_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23811",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23998",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23999",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_03_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23813",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Armadillo_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23814",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Armadillo_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23815",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23816",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23817",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23818",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23819",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23820",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Worm_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24020",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Boss_Fire.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24021",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Boss_StandHit.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24077",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_LivingBush.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24105",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_01_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24122",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24123",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24124",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24125",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_02/W2_Enemy_04_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23821",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24000",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24001",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23822",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_01_StandFire.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23823",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24002",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24003",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23824",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_02_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23825",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24004",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24005",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Enemy_03_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23828",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23829",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23826",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23827",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Scorpion_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23830",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Bat.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23831",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Bat_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24022",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Boss_Fire.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24023",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_03/W3_Boss_FlyHit.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i23832",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24006",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24007",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23834",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24008",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24009",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23866",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23835",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24010",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24011",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23867",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_03_Fire.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23837",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23838",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23839",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23840",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23841",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23842",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Penguin_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23843",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23844",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23845",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23846",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23847",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23848",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23849",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23850",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Sheep_02_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23974",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Trap_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24024",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Boss_Move.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24025",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Boss_Hit.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24128",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_04/W4_Enemy_01_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23851",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24012",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24013",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23852",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24014",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24015",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23853",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_02_Attack.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23854",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24016",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24017",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23868",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23869",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_03_Fire.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23856",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23857",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23858",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23859",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23860",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Hit.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23861",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Frog_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23862",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hegdehog_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23863",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hedgehog_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23864",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hegdehog_02_Move.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23865",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Hedgehog_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24026",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Boss_Fire.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24027",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Boss_FlyHit.png",
+  "cellW": 192,
+  "cellH": 192,
+  "mode": "cell"
+ },
+ {
+  "name": "i24106",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Enemy_01_Stand.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24107",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_01_Fly.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24110",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_01_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24109",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_02_Fly.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24108",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/World_05/W5_Bird_02_Dead.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24083",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Wrona_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24084",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Wrona_02.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i15",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_PlatformJump_01.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24041",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_PlatformJump_01.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23941",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_PlatformJump_01.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i1668",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Platform_Move.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23933",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_2/W2_Platform_Move.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23934",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Platform_Move.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23935",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_4/W4_Platform_Move.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23936",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Platform_Move.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24075",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_1/W1_Platform.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23956",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Platform.png",
+  "cellW": 192,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i191",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Health.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22152",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_ExtraLife.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i16",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Blue.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i199",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Red.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i197",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Green.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i550",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Yellow.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22144",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_01_Fiolet.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i193",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Blue.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i552",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Red.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22146",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Green.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22147",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Yellow.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22145",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_02_Fiolet.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i195",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Blue.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i200",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Red.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22148",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Green.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22149",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Yellow.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i551",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_03_Fiolet.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i196",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Blue.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i375",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Red.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i198",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Green.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22151",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Yellow.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i22150",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Diamond_04_Fiolet.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24045",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_Fireball.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i24095",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Amulet_Part.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24164",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Points/Point_DoubleJump.png",
+  "cellW": 48,
+  "cellH": 48,
+  "mode": "cell"
+ },
+ {
+  "name": "i23972",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_3/W3_Trap_01.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i24079",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Worlds/World_5/W5_Trap.png",
+  "cellW": 96,
+  "cellH": 96,
+  "mode": "cell"
+ },
+ {
+  "name": "i23978",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Characters/Hit_Effect.png",
+  "cellW": 66,
+  "cellH": 22,
+  "mode": "cell"
+ },
+ {
+  "name": "i24044",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Fireball.png",
+  "cellW": 75,
+  "cellH": 42,
+  "mode": "cell"
+ },
+ {
+  "name": "i24099",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Snowball.png",
+  "cellW": 26,
+  "cellH": 25,
+  "mode": "cell"
+ },
+ {
+  "name": "i24103",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Magic/Papirus.png",
+  "cellW": 48,
+  "cellH": 25,
+  "mode": "cell"
+ },
+ {
+  "name": "i24132",
+  "png": "Assets/Sources/OriginalAssets/Graphics/Gui/Interface/HowToPlay_Arrow.png",
+  "cellW": 64,
+  "cellH": 64,
+  "mode": "cell"
+ },
+ {
+  "name": "i24134",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Enemy_Stun.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24136",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Enemy_Kick.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24138",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Cage.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24141",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Portal.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24143",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Fireball.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24145",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy01_Jump.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24146",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy01_Umbrela.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24150",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W2Enemy01_Spear.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24152",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Teleport_01.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24153",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_Teleport_02.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24156",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy03.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24157",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Enemy04.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24158",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W1Wasp.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24159",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_W3Scorpion.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ },
+ {
+  "name": "i24166",
+  "png": "Assets/Sources/OriginalAssets/Language/HowToPlay/ArrowText_DoubleJump.png",
+  "cellW": 180,
+  "cellH": 90,
+  "mode": "cell"
+ }
 ]

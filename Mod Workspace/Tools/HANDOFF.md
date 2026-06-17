@@ -66,8 +66,18 @@ Per layer, per filled cell [frame, imgName]:
 - layer 0 = back; use sorting layer / Z for draw order.
 Animations later: out/animations.json (imageMap + frames).
 
+## OBJECT LAYER CRACKED (this session) -- the "20%" is done
+- Engine dump succeeded for ALL 60 levels -> out/Level_W*_*.objdump.txt (class/pos/size/layer/flip).
+- Binary object record = u32 count, then per obj: s32 typeId, s32 uid, s32 x, s32 y, +6/var bytes.
+- typeId == Game.dat template id. 176=PLAYER (a176*), 22144=End_Level portal, 553=diamond.
+- build_objects.py fuses objdump + binary -> out/Level_W*_*.objects.json. ALL 60 resolved 0 unresolved,
+  exactly 1 player each. W*_11 = tiny bonus levels (4-9 objs).
+- Data layer COMPLETE: tiles (59/60) + objects (60/60) + imagemaps(286) + animations.
+
 ## Next
-1. Build Unity tile importer from spec above (Sonnet, in progress).
-2. WAIT for user engine dump -> map object layer + Game.dat field block.
-3. Finish parse_tille.py object section; validate clean-EOF all 60 levels.
-4. Object prefabs by image id + behaviors from Game.dat templates.
+1. Build the automated Unity importer: tiles -> Tilemap/sprites, objects.json -> prefabs by typeId.
+   Player prefab = typeId 176; portal = 22144. Use imagemaps.json/animations.json for sprites.
+2. Full Game.dat parser (126 templates w/ field block) for behaviors (%life/%score/enemy AI params).
+3. Decode the 6 missing tile layers (objdump shows 8 t2dTileLayer, parser finds 2) + W3_05 edge case.
+4. Per-object variable field block (portal target, scroll text) -- refinement, positions already exact.
+5. Coop netcode (Unity 6 Netcode for GameObjects).

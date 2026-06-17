@@ -31,9 +31,17 @@ u32 sceneW  u32 sceneH         // pixels, e.g. 1280 x 1152
 -- scene script-field block --
 u32 fieldCount
   per field: str key, then value/handler  (e.g. onCreate -> "ShowFireball"="0")
--- placed objects (sprites/enemies/items) --   <-- LOW CONFIDENCE, NOT fully cracked
-  records keyed by image name ("i24048", a-ids). Contain f32 x,y / rot / scale / frame /
-  flip + a per-object dynamic-field block like Game.dat. EXACT layout still unknown.
+-- placed objects (sprites/enemies/items/player) --   <-- CRACKED (validated 42/42 on W1_01, all 60 ok)
+  u32 objectCount
+  per object:
+    s32 typeId      // == a Game.dat template id (e.g. 553=diamond, 22144=End_Level portal, 176=PLAYER)
+    s32 uid         // unique instance id, incrementing
+    s32 x  s32 y    // world position in PIXELS, SIGNED (off-screen spawns are negative)
+    [6+ bytes]      // simple objs: 6 zero bytes. special objs (portal/scroll) append a
+                    //   dynamic-field block (onCollision/onComplete handlers, %text, etc) -> VARIABLE length
+  typeId -> Game.dat template "a{id}" -> anim datablock "a{id}Main" (player uses a176Stand/Move/Jump..)
+  -> imageMap -> PNG. Extractor: build_objects.py (fuses objdump positions + binary typeIds).
+  NOTE positions are s32 here, NOT f32. Player template = 176 (exactly one per level).
 -- tile layers --                              <-- HIGH CONFIDENCE
 repeat per layer:
   u32 tileW  u32 tileH          // e.g. 128,128

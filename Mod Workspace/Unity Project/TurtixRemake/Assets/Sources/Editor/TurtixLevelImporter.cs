@@ -42,23 +42,58 @@ namespace Turtix.Unity
         [System.Serializable]
         public class TileLayer
         {
+            public int order;
             public int tileW;
             public int tileH;
             public int cols;
             public int rows;
-            public TileCell[] cells;
+            public bool background;
+            public bool collision;
+            public TileCell[] cells;   // SPARSE: only filled cells
         }
 
         [System.Serializable]
         public class TileCell
         {
-            public bool empty;
+            public int x;
+            public int y;
             public int frame;
             public string img;
         }
 
+        [System.Serializable]
+        public class ObjectLevel
+        {
+            public string level;
+            public int[] scene;
+            public ObjectData[] objects;
+        }
+
+        [System.Serializable]
+        public class ObjectData
+        {
+            public int typeId;
+            public string template;
+            public int x;
+            public int y;
+            public float sx;
+            public float sy;
+            public int layer;
+            public string img;
+            public int frame;
+            public bool isPlayer;
+            public bool isPortal;
+        }
+
+        [System.Serializable]
+        private class ObjectLevelWrapper
+        {
+            public ObjectLevel level;
+        }
+
         private string[] levelNames;
         private int selectedLevel;
+        private bool YFlip = true;   // engine +Y is down; flip to Unity +Y up
         private readonly Dictionary<string, Sprite> spriteCache = new();
 
         [MenuItem("Turtix/Import Level")]
@@ -92,6 +127,7 @@ namespace Turtix.Unity
             }
 
             selectedLevel = EditorGUILayout.Popup("Level", selectedLevel, levelNames);
+            YFlip = EditorGUILayout.Toggle("Flip Y (engine Y-down)", YFlip);
             if (GUILayout.Button("Import Selected Level"))
             {
                 ImportLevel(levelNames[selectedLevel]);
@@ -144,11 +180,13 @@ namespace Turtix.Unity
             for (int i = 0; i < level.layers.Length; i++)
             {
                 var layer = level.layers[i];
-                var layerGo = new GameObject($"Layer{i}");
+                string kind = layer.collision ? "Collision" : (layer.background ? "BG" : "Tiles");
+                var layerGo = new GameObject($"Layer_{kind}_order{layer.order}");
                 layerGo.transform.SetParent(root.transform, false);
-                layerGo.transform.localPosition = new Vector3(0, 0, i * 0.01f);
-                BuildLayer(layer, layerGo, i);
+                BuildLayer(layer, layerGo);
             }
+
+            BuildObjects(levelName, level, root);
 
             if (saveScene)
             {
@@ -169,38 +207,211 @@ namespace Turtix.Unity
             public TileLevel level;
         }
 
-        private void BuildLayer(TileLayer layer, GameObject parent, int layerIndex)
+        private void BuildLayer(TileLayer layer, GameObject parent)
         {
-            int cx = layer.cols;
-            int cy = layer.rows;
-            for (int y = 0; y < cy; y++)
-            {
-                for (int x = 0; x < cx; x++)
-                {
-                    var cell = layer.cells[y * cx + x];
-                    if (cell.empty) continue;
+            int rows = layer.rows;
+            int sortOrder = -layer.order;   // engine order: high=back. -order => back is most negative.
 
-                    Sprite sprite = GetSprite(cell.img, cell.frame);
+            // collision layer: invisible in-game -> add BoxCollider2D per cell, no sprite.
+            if (layer.collision)
+            {
+                foreach (var cell in layer.cells)
+                {
+                    var col = new GameObject($"col_{cell.x}_{cell.y}");
+                    col.transform.SetParent(parent.transform, false);
+                    float cxp = cell.x * layer.tileW + layer.tileW * 0.5f;
+                    float cyp = (rows - 1 - cell.y) * layer.tileH + layer.tileH * 0.5f;
+                    col.transform.localPosition = new Vector3(cxp, cyp, 0);
+                    var bc = col.AddComponent<BoxCollider2D>();
+                    bc.size = new Vector2(layer.tileW, layer.tileH);
+                }
+                return;
+            }
+
+            // background layers: PARALLAX. ONE square sprite per layer, NATIVE size,
+            // NOT tiled and NOT stretched. A runtime ParallaxLayer scrolls it vs the camera
+            // by a depth factor (backmost scrolls slowest). Draw order from engine layerOrder.
+            if (layer.background)
+            {
+                float sceneW = layer.cols * layer.tileW;
+                float sceneH = layer.rows * layer.tileH > 0 ? layer.rows * layer.tileH : layer.tileH;
+                foreach (var cell in layer.cells)
+                {
+                    Sprite sprite = GetBackgroundSprite(cell.img);
                     if (sprite == null) continue;
 
-                    var go = new GameObject($"{cell.img}_{cell.frame}_{x}_{y}");
-                    go.transform.SetParent(parent.transform, false);
+                    var bgo = new GameObject($"bg_{cell.img}_order{layer.order}");
+                    bgo.transform.SetParent(parent.transform, false);
+                    bgo.transform.localPosition = new Vector3(sceneW * 0.5f, sceneH * 0.5f, 0);
 
-                    int uy = cy - 1 - y;
-                    float px = x * Tile + Tile * 0.5f;
-                    float py = uy * Tile + Tile * 0.5f;
-                    go.transform.localPosition = new Vector3(px, py, 0);
+                    var bsr = bgo.AddComponent<SpriteRenderer>();
+                    bsr.sprite = sprite;
+                    bsr.sortingOrder = sortOrder;
+                    bsr.drawMode = SpriteDrawMode.Simple;   // single square, native size, no tile/stretch
 
-                    var sr = go.AddComponent<SpriteRenderer>();
-                    sr.sprite = sprite;
-                    sr.sortingOrder = layerIndex;
+                    var px = bgo.AddComponent<ParallaxLayer>();
+                    px.worldHeight = sceneH;
+                    px.worldWidth = sceneW;
+                    px.coverMargin = 1.08f;
+                    px.verticalAnchor = 0.5f;
+                    // depth: nearest layer (D_2, order6) barely moves; far (D_1, order8) moves more.
+                    px.parallaxFactor = Mathf.Clamp01(0.1f + 0.15f * (layer.order - 6));
+                    if (cell.img == "i4")                   // W1_Background_D_C_1 = clouds
+                    {
+                        px.tileX = true;
+                        px.autoScrollX = -40f;              // drift right -> left
+                        px.verticalAnchor = 0.72f;          // sit higher (sky band)
+                        EnsureFullRect(cell.img);           // tiling needs Full Rect mesh
+                    }
+                }
+                return;
+            }
 
-                    // 96px sprites on a 128px grid: keep native pixel size, centered
-                    // If cellW != Tile, Unity will draw the sprite at its native size
-                    // which is correct as long as the pivot is center (default).
-                    // For 64px sprites on 128 grid this leaves a gap, matching original.
+            foreach (var cell in layer.cells)
+            {
+                Sprite sprite = GetSprite(cell.img, cell.frame);
+                if (sprite == null) continue;
+
+                var go = new GameObject($"{cell.img}_{cell.frame}_{cell.x}_{cell.y}");
+                go.transform.SetParent(parent.transform, false);
+
+                float px = cell.x * layer.tileW + layer.tileW * 0.5f;
+                float py = (rows - 1 - cell.y) * layer.tileH + layer.tileH * 0.5f;
+                go.transform.localPosition = new Vector3(px, py, 0);
+
+                var sr = go.AddComponent<SpriteRenderer>();
+                sr.sprite = sprite;
+                sr.sortingOrder = sortOrder;
+
+                // t2d tile layers scale each imageMap frame to FILL the tile slot
+                // (e.g. 96px source -> 128px cell). Scale to fit.
+                Vector2 nat = sprite.bounds.size;   // world size at PPU=1 == native px
+                if (nat.x > 0 && nat.y > 0)
+                    go.transform.localScale = new Vector3(layer.tileW / nat.x, layer.tileH / nat.y, 1);
+            }
+        }
+
+        // Background sprite = whole image (Single mode), wrap Repeat, so SpriteRenderer
+        // drawMode=Tiled repeats it across the scene instead of stretching.
+        private Sprite GetBackgroundSprite(string imageMapName)
+        {
+            string key = "BG_" + imageMapName;
+            if (spriteCache.TryGetValue(key, out Sprite cached)) return cached;
+
+            ImageMapData map = FindImageMap(imageMapName);
+            if (map == null || !File.Exists(map.png)) { Debug.LogError("BG imageMap missing " + imageMapName); return null; }
+
+            if (!slicedPngs.Contains(map.png))
+            {
+                slicedPngs.Add(map.png);
+                var ti = AssetImporter.GetAtPath(map.png) as TextureImporter;
+                if (ti != null && (ti.spriteImportMode != SpriteImportMode.Single ||
+                                   ti.wrapMode != TextureWrapMode.Repeat ||
+                                   !Mathf.Approximately(ti.spritePixelsPerUnit, 1f)))
+                {
+                    ti.textureType = TextureImporterType.Sprite;
+                    ti.spriteImportMode = SpriteImportMode.Single;
+                    ti.spritePixelsPerUnit = 1;
+                    ti.wrapMode = TextureWrapMode.Repeat;
+                    ti.mipmapEnabled = false;
+                    EditorUtility.SetDirty(ti);
+                    ti.SaveAndReimport();
                 }
             }
+            Sprite s = AssetDatabase.LoadAssetAtPath<Sprite>(map.png);
+            if (s != null) spriteCache[key] = s;
+            return s;
+        }
+
+        private void BuildObjects(string levelName, TileLevel level, GameObject root)
+        {
+            string path = Path.Combine(DataRoot, "objects", levelName + ".json").Replace("\\", "/");
+            if (!File.Exists(path)) { Debug.LogWarning("No objects json: " + path); return; }
+
+            string json = "{\"level\":" + File.ReadAllText(path) + "}";
+            var ol = JsonUtility.FromJson<ObjectLevelWrapper>(json).level;
+            if (ol?.objects == null) return;
+
+            // engine coords: origin = scene CENTER, +Y down. tile space: origin bottom-left, +Y up.
+            // ux = x + sceneW/2 ; uy = sceneH/2 - y   (flip Y). Toggle YFlip if it looks mirrored.
+            float halfW = level.scene[0] * 0.5f;
+            float halfH = level.scene[1] * 0.5f;
+
+            var objRoot = new GameObject("Objects");
+            objRoot.transform.SetParent(root.transform, false);
+
+            GameObject playerGo = null;
+            Vector3 playerPos = new Vector3(halfW, halfH, 0);
+
+            foreach (var o in ol.objects)
+            {
+                float ux = o.x + halfW;
+                float uy = (YFlip ? (halfH - o.y) : (o.y + halfH));
+
+                string label = o.isPlayer ? "Player" : (o.isPortal ? "Portal" : (o.template ?? ("a" + o.typeId)));
+                var go = new GameObject($"{label}_{o.x}_{o.y}");
+                go.transform.SetParent(objRoot.transform, false);
+                go.transform.localPosition = new Vector3(ux, uy, -1f);
+
+                var sr = go.AddComponent<SpriteRenderer>();
+                sr.sortingOrder = 200 + o.layer;
+
+                Sprite sprite = string.IsNullOrEmpty(o.img) ? null : GetSprite(o.img, o.frame);
+                if (sprite != null) sr.sprite = sprite;
+                else
+                {
+                    sr.sprite = GetMarkerSprite();
+                    sr.color = o.isPlayer ? Color.cyan : (o.isPortal ? Color.green : Color.magenta);
+                    go.transform.localScale = new Vector3(o.sx > 0 ? o.sx : 64, o.sy > 0 ? o.sy : 64, 1);
+                }
+
+                if (o.isPlayer)
+                {
+                    sr.sortingOrder = 500;
+                    var rb = go.AddComponent<Rigidbody2D>();
+                    rb.freezeRotation = true;
+                    var cc = go.AddComponent<CapsuleCollider2D>();
+                    cc.size = new Vector2(56, 92);          // ~ inside the 96px sprite
+                    cc.direction = CapsuleDirection2D.Vertical;
+                    go.AddComponent<TurtixPlayer>();
+                    playerGo = go;
+                    playerPos = go.transform.position;
+                }
+            }
+
+            SetupCamera(playerGo, playerPos, level.scene[0], level.scene[1]);
+        }
+
+        // Orthographic follow-camera covering ~one screen, clamped to the level.
+        private void SetupCamera(GameObject player, Vector3 playerPos, int sceneW, int sceneH)
+        {
+            var camGo = GameObject.Find("Main Camera");
+            if (camGo == null)
+            {
+                camGo = new GameObject("Main Camera");
+                camGo.tag = "MainCamera";
+            }
+            var cam = camGo.GetComponent<Camera>() ?? camGo.AddComponent<Camera>();
+            cam.orthographic = true;
+            cam.orthographicSize = 384;                 // 768px tall view; bg cover-scales independent of zoom
+            cam.backgroundColor = new Color(0.45f, 0.6f, 0.8f);
+            camGo.transform.position = new Vector3(playerPos.x, playerPos.y, -100);
+
+            var follow = camGo.GetComponent<CameraFollow>() ?? camGo.AddComponent<CameraFollow>();
+            follow.target = player != null ? player.transform : null;
+            follow.useBounds = true;
+            follow.levelBounds = new Rect(0, 0, sceneW, sceneH);
+        }
+
+        private Sprite markerSprite;
+        private Sprite GetMarkerSprite()
+        {
+            if (markerSprite != null) return markerSprite;
+            var tex = new Texture2D(1, 1, TextureFormat.RGBA32, false);
+            tex.SetPixel(0, 0, Color.white);
+            tex.Apply();
+            markerSprite = Sprite.Create(tex, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f), 1f);
+            return markerSprite;
         }
 
         private Sprite GetSprite(string imageMapName, int frame)
@@ -214,88 +425,84 @@ namespace Turtix.Unity
                 Debug.LogError("Unknown imageMap " + imageMapName);
                 return null;
             }
-
             if (!File.Exists(map.png))
             {
                 Debug.LogError("Missing PNG " + map.png);
                 return null;
             }
 
-            string[] sprites = AssetDatabase.FindAssets($"t:{nameof(Sprite)} {imageMapName}_{frame}")
-                .Select(AssetDatabase.GUIDToAssetPath)
-                .Where(p => p.StartsWith(map.png))
-                .ToArray();
+            EnsureSliced(map);   // slice the sheet into named cells once per png
 
-            Sprite sprite = null;
-            if (sprites.Length > 0)
-            {
-                sprite = AssetDatabase.LoadAssetAtPath<Sprite>(sprites[0]);
-            }
+            // load the SPECIFIC named sub-sprite (not LoadAssetAtPath, which returns cell 0)
+            Sprite sprite = AssetDatabase.LoadAllAssetsAtPath(map.png)
+                .OfType<Sprite>()
+                .FirstOrDefault(s => s.name == $"{map.name}_{frame}");
+
+            if (sprite == null)
+                Debug.LogWarning($"No sub-sprite {map.name}_{frame} in {map.png}");
             else
-            {
-                sprite = SliceAndLoad(map, frame);
-            }
-
-            if (sprite != null) spriteCache[key] = sprite;
+                spriteCache[key] = sprite;
             return sprite;
         }
 
+        private readonly Dictionary<string, ImageMapDB> imapDbCache = new();
         private ImageMapData FindImageMap(string name)
         {
-            string json = "{\"maps\":" + File.ReadAllText(Path.Combine(DataRoot, "imagemaps.json")) + "}";
-            var db = JsonUtility.FromJson<ImageMapDB>(json);
+            string p = Path.Combine(DataRoot, "imagemaps.json");
+            if (!imapDbCache.TryGetValue(p, out ImageMapDB db))
+            {
+                string json = "{\"maps\":" + File.ReadAllText(p) + "}";
+                db = JsonUtility.FromJson<ImageMapDB>(json);
+                imapDbCache[p] = db;
+            }
             return db.maps?.FirstOrDefault(m => m.name == name);
         }
 
-        private Sprite SliceAndLoad(ImageMapData map, int frame)
+        private readonly HashSet<string> slicedPngs = new();
+        private void EnsureSliced(ImageMapData map)
         {
+            if (slicedPngs.Contains(map.png)) return;
+            slicedPngs.Add(map.png);
+
             var importer = AssetImporter.GetAtPath(map.png) as TextureImporter;
-            if (importer == null) return null;
+            if (importer == null) { Debug.LogError("No importer for " + map.png); return; }
+
+            var tex = AssetDatabase.LoadAssetAtPath<Texture2D>(map.png);
+            if (tex == null) { Debug.LogError("Cannot load texture " + map.png); return; }
+            int cols = tex.width / map.cellW;
+            int rows = tex.height / map.cellH;
+            int total = cols * rows;
+
+            // already correctly sliced? skip the (expensive) reimport.
+            if (importer.spriteImportMode == SpriteImportMode.Multiple &&
+                importer.spritesheet != null && importer.spritesheet.Length == total &&
+                Mathf.Approximately(importer.spritePixelsPerUnit, 1f))
+                return;
 
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Multiple;
-            importer.spritePixelsPerUnit = Tile;
+            importer.spritePixelsPerUnit = 1;   // pixel-space world: 1px = 1 unit
             importer.filterMode = FilterMode.Bilinear;
             importer.mipmapEnabled = false;
-
-            int w = 0, h = 0;
-            importer.GetWidthAndHeight(ref w, ref h);
-
-            int cols = w / map.cellW;
-            int rows = h / map.cellH;
-            int total = cols * rows;
-            if (frame < 0 || frame >= total)
-            {
-                Debug.LogError($"Frame {frame} out of range for {map.name} ({cols}x{rows})");
-                return null;
-            }
 
             var metas = new SpriteMetaData[total];
             int idx = 0;
             for (int y = 0; y < rows; y++)
-            {
                 for (int x = 0; x < cols; x++)
                 {
                     metas[idx] = new SpriteMetaData
                     {
                         name = $"{map.name}_{idx}",
+                        // frame idx counts rows top->bottom; Unity texture origin is bottom-left.
                         rect = new Rect(x * map.cellW, (rows - 1 - y) * map.cellH, map.cellW, map.cellH),
                         pivot = new Vector2(0.5f, 0.5f),
                         alignment = (int)SpriteAlignment.Center,
-                        border = new Vector4(0, 0, 0, 0)
                     };
                     idx++;
                 }
-            }
             importer.spritesheet = metas;
-
-            AssetDatabase.ImportAsset(map.png, ImportAssetOptions.ForceUpdate);
-
-            Sprite[] all = AssetDatabase.LoadAllAssetsAtPath(map.png)
-                .OfType<Sprite>()
-                .ToArray();
-
-            return all.FirstOrDefault(s => s.name == $"{map.name}_{frame}");
+            EditorUtility.SetDirty(importer);
+            importer.SaveAndReimport();
         }
     }
 }

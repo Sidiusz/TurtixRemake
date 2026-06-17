@@ -92,16 +92,18 @@ function dumpOneLevel(%world, %level)
    if (!isFile(%path)) { echo("SKIP (no file): " @ %path); return; }
 
    %base = "Level_W" @ %world @ "_" @ (%level < 10 ? "0" @ %level : %level);
-   %out = "Mod Workspace/Tools/out/" @ %base @ ".cs";
    %odump = "Mod Workspace/Tools/out/" @ %base @ ".objdump.txt";
+   %tiles = "Mod Workspace/Tools/out/" @ %base @ ".tiles_engine.txt";
    %att = "Mod Workspace/Tools/out/" @ %base @ ".attempt";
-   // resume: skip levels already dumped (objdump = identity, the thing we need)
-   if (isFile(%odump))
+   %needObj = !isFile(%odump);
+   %needTiles = !isFile(%tiles);
+   // resume: skip only when BOTH artifacts already exist
+   if (!%needObj && !%needTiles)
    {
       echo("SKIP (already dumped): " @ %base);
       return;
    }
-   // crash-immunity: if attempted before but never produced .cs, it crashed -> skip it
+   // crash-immunity: if attempted before but never produced output, it crashed -> skip it
    if (isFile(%att))
    {
       echo("SKIP (known-bad, crashed before): " @ %base);
@@ -123,6 +125,17 @@ function dumpOneLevel(%world, %level)
    $Level.setSceneGraph(scene);
    $Level.createLevel(%path);
 
+   if (%needObj) dumpObjects(%base);
+   if (%needTiles) dumpTiles(%base);
+   if (isFile(%att)) fileDelete(%att);
+
+   $Level.clear();
+   $Level.delete();
+}
+
+function dumpObjects(%base)
+{
+   %odump = "Mod Workspace/Tools/out/" @ %base @ ".objdump.txt";
    // identity dump -> per-level file (survives crashes; console.log is unreliable).
    // t2dAnimatedSprite identity lives in its ANIMATION DATABLOCK (e.g. a811Main ->
    // imageMap i23982 -> PNG). imageMap/animationName fields read empty, so probe the
@@ -147,22 +160,55 @@ function dumpOneLevel(%world, %level)
    %od.close();
    %od.delete();
    echo("=== OBJDUMP " @ %base @ " count=" @ %n @ " -> " @ %odump @ " ===");
-   if (isFile(%att)) fileDelete(%att);   // clear attempt marker on success
-   // NOTE: scene.save() dropped -- it omits identity AND is the likely crash source.
-   // objdump above carries identity + transforms (all we need for the importer).
+}
 
-   // teardown so next level starts clean
-   $Level.clear();
-   $Level.delete();
+// Export every t2dTileLayer's tiles via the engine. Writes out/<base>.tiles_engine.txt:
+//   layer|<idx>|layerOrder=<L>|cols=<x>|rows=<y>|tile=<w>x<h>
+//   <x>|<y>|<type>|<imageMap>|<frame>|<anim>
+// Also dumps the FIRST layer's full member list to console.log (DIAGNOSTIC) so if any
+// getter name is wrong we can read the real API and fix next run.
+function dumpTiles(%base)
+{
+   %path = "Mod Workspace/Tools/out/" @ %base @ ".tiles_engine.txt";
+   %fo = new FileObject();
+   %fo.openForWrite(%path);
+   %n = scene.getCount();
+   %diag = 0;
+   for (%i = 0; %i < %n; %i++)
+   {
+      %o = scene.getObject(%i);
+      if (%o.getClassName() !$= "t2dTileLayer")
+         continue;
+      if (!%diag) { %diag = 1; echo("=== TILELAYER DUMP (API diagnostic) ==="); %o.dump(); echo("=== END TILELAYER DUMP ==="); }
+
+      %cx = %o.getTileCountX();
+      %cy = %o.getTileCountY();
+      %fo.writeLine("layer|" @ %i @ "|layerOrder=" @ %o.Layer @ "|cols=" @ %cx @ "|rows=" @ %cy
+                    @ "|size=" @ %o.getSize());
+      for (%ty = 0; %ty < %cy; %ty++)
+         for (%tx = 0; %tx < %cx; %tx++)
+         {
+            %type = %o.getTileType(%tx, %ty);
+            %img = %o.getStaticTileImageMap(%tx, %ty);
+            %frame = %o.getStaticTileFrame(%tx, %ty);
+            %anim = %o.getAnimatedTileAnimationName(%tx, %ty);
+            if (%img !$= "" || %anim !$= "" || (%type !$= "" && %type !$= "empty"))
+               %fo.writeLine(%tx @ "|" @ %ty @ "|" @ %type @ "|" @ %img @ "|" @ %frame @ "|" @ %anim);
+         }
+   }
+   %fo.close();
+   %fo.delete();
+   echo("=== TILES " @ %base @ " -> " @ %path @ " ===");
 }
 
 function dumpAll()
 {
+   // objects (objdump) + engine tiles (tiles_engine) for all 60. Resumable per-artifact.
    for (%w = 1; %w <= 5; %w++)
       for (%l = 1; %l <= 12; %l++)
          dumpOneLevel(%w, %l);
 
-   echo("=== DUMP DONE -> out/Level_W*_*.objdump.txt (all levels) ===");
+   echo("=== DUMP DONE (objects + engine tiles, all levels) ===");
    quit();
 }
 
