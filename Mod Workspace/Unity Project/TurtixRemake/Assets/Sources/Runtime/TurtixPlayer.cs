@@ -58,7 +58,7 @@ namespace Turtix.Unity
         {
             if (!controlEnabled) { moveInput = 0f; return; }
             var kb = Keyboard.current;
-            if (kb == null) return;
+            if (kb == null) { moveInput = 0f; return; }   // no device/unfocused -> no stale input
 
             float right = (kb.rightArrowKey.isPressed || kb.dKey.isPressed) ? 1f : 0f;
             float left = (kb.leftArrowKey.isPressed || kb.aKey.isPressed) ? 1f : 0f;
