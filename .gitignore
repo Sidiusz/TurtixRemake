@@ -1,0 +1,46 @@
+# Original game binaries/assets (not our code)
+*.exe
+*.dll
+*.dat
+*.png
+*.jpg
+*.bmp
+*.wav
+*.ogg
+*.mp3
+
+# Generated parser output / Unity generated data
+out/
+Logs/
+*.log
+*.dso
+*.ilk
+*.pdb
+
+# Unity generated
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
