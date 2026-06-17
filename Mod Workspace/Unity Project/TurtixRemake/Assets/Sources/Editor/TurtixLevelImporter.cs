@@ -244,13 +244,24 @@ namespace Turtix.Unity
             public TileLevel level;
         }
 
-        // Slope collision polygon for a collision-tile frame (centered local coords).
-        // TODO: frames 4-7 are slope/corner shapes in Collisions.png — exact polys need an
-        // engine getTileCollisionPoly dump. Until then all cells are full boxes (merged),
-        // which already removes flat-run seam snagging.
+        // Collision polygon for a collision-tile frame, derived from the Collisions.png art:
+        // the opaque shape per cell (full square / slope triangle) IS the collider. Unity
+        // auto-generates a physics shape from the sprite alpha; we scale it to the tile.
+        // Returns null only if no physics shape -> caller falls back to a full box.
         private Vector2[] SlopePoly(int frame, float w, float h)
         {
-            return null;
+            Sprite s = GetSprite("i1", frame);   // i1 = Collisions.png shape key
+            if (s == null || s.GetPhysicsShapeCount() <= 0) return null;
+            var pts = new List<Vector2>();
+            s.GetPhysicsShape(0, pts);
+            if (pts.Count < 3) return null;
+            float bx = s.bounds.size.x, by = s.bounds.size.y;
+            if (bx <= 0f || by <= 0f) return null;
+            float rx = w / bx, ry = h / by;      // sprite cell -> layer tile size
+            var arr = new Vector2[pts.Count];
+            for (int i = 0; i < pts.Count; i++)
+                arr[i] = new Vector2(pts[i].x * rx, pts[i].y * ry);
+            return arr;
         }
 
         private PhysicsMaterial2D groundMat;
