@@ -1,0 +1,50 @@
+setLogMode(6);
+setModPaths("Content");
+exec("Content/Main.cs");
+
+function onStart()
+{
+   $pref::Video::fullScreen = 0;
+   videoSetGammaCorrection($pref::OpenGL::gammaCorrection);
+   if (!createCanvas("TurtixDump"))
+   {
+      error("Canvas creation failed.");
+      quit();
+   }
+   initializeOpenAL();
+   exec("Content/Gui/Profiles.cs");
+   initializeData();
+   $LoadingWorld = 1;
+   $LoadingLevel = 1;
+   startLoading();
+   schedule(2000, 0, dumpScene);
+}
+
+function dumpScene()
+{
+   %n = scene.getSceneObjectCount();
+   %f = new FileStream();
+   if (!%f.open("dump_level.txt", "write"))
+   {
+      error("dump file open failed");
+      quit();
+   }
+   %f.writeLine("OBJECT_COUNT " @ %n);
+   for (%i = 0; %i < %n; %i++)
+   {
+      %obj = scene.getSceneObject(%i);
+      %f.writeLine("OBJ " @ %i @ " NAME " @ %obj.getName() @ " CLASS " @ %obj.getClassName());
+      %f.writeLine("  POSITION " @ %obj.getPosition());
+      %f.writeLine("  SIZE " @ %obj.getSize());
+      %f.writeLine("  ROTATION " @ %obj.getRotation());
+      %f.writeLine("  LAYER " @ %obj.getLayer());
+      %f.writeLine("  VISIBLE " @ %obj.getVisible());
+      if (%obj.isMemberOfClass("t2dAnimatedSprite"))
+         %f.writeLine("  ANIMATION " @ %obj.getAnimation());
+      if (%obj.isMemberOfClass("t2dStaticSprite"))
+         %f.writeLine("  IMAGEMAP " @ %obj.getImageMap());
+   }
+   %f.close();
+   echo("=== DUMP DONE ===");
+   quit();
+}

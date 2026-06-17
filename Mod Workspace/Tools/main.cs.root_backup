@@ -1,0 +1,4 @@
+setLogMode(6);
+setModPaths("Content");
+exec("Content/Main.cs");
+onStart ();
