@@ -15,6 +15,11 @@ namespace Turtix.Unity
         private const string DataRoot = "Assets/Sources/GeneratedData";
         private const string ScenesRoot = "Assets/Sources/Scenes";
 
+        // Background engine constants (from W1_01 inspect dump). Refine per-world later.
+        private const float BgTileScale = 4f;        // engine bg tileSize = cellSize * 4
+        private const float BgPanY = -495f;          // bg panPositionY vertical offset
+        private const float BgCloudScrollX = 10f;    // clouds auto-pan px/s (panX +10/s)
+
         [System.Serializable]
         public class ImageMapDB
         {
@@ -228,41 +233,36 @@ namespace Turtix.Unity
                 return;
             }
 
-            // background layers: PARALLAX. ONE square sprite per layer, NATIVE size,
-            // NOT tiled and NOT stretched. A runtime ParallaxLayer scrolls it vs the camera
-            // by a depth factor (backmost scrolls slowest). Draw order from engine layerOrder.
+            // Background layers — 1:1 with engine t2dTileLayer (W1_01 inspect dump):
+            // world-fixed, wrap X+Y, NOT mounted, NO parallax. Camera scrolls over them.
+            // Engine renders the small cell image at 4x (tileSize = cellSize * 4) and tiles it
+            // across the whole scene. panY = -495 vertical offset. Clouds (_C_) auto-pan ~10px/s X.
             if (layer.background)
             {
                 float sceneW = layer.cols * layer.tileW;
                 float sceneH = layer.rows * layer.tileH > 0 ? layer.rows * layer.tileH : layer.tileH;
                 foreach (var cell in layer.cells)
                 {
+                    ImageMapData bgMap = FindImageMap(cell.img);
                     Sprite sprite = GetBackgroundSprite(cell.img);
-                    if (sprite == null) continue;
+                    if (sprite == null || bgMap == null) continue;
 
                     var bgo = new GameObject($"bg_{cell.img}_order{layer.order}");
                     bgo.transform.SetParent(parent.transform, false);
-                    bgo.transform.localPosition = new Vector3(sceneW * 0.5f, sceneH * 0.5f, 0);
 
                     var bsr = bgo.AddComponent<SpriteRenderer>();
                     bsr.sprite = sprite;
                     bsr.sortingOrder = sortOrder;
-                    bsr.drawMode = SpriteDrawMode.Simple;   // single square, native size, no tile/stretch
 
                     var px = bgo.AddComponent<ParallaxLayer>();
-                    px.worldHeight = sceneH;
                     px.worldWidth = sceneW;
-                    px.coverMargin = 1.08f;
-                    px.verticalAnchor = 0.5f;
-                    // depth: nearest layer (D_2, order6) barely moves; far (D_1, order8) moves more.
-                    px.parallaxFactor = Mathf.Clamp01(0.1f + 0.15f * (layer.order - 6));
-                    if (cell.img == "i4")                   // W1_Background_D_C_1 = clouds
-                    {
-                        px.tileX = true;
-                        px.autoScrollX = -40f;              // drift right -> left
-                        px.verticalAnchor = 0.72f;          // sit higher (sky band)
-                        EnsureFullRect(cell.img);           // tiling needs Full Rect mesh
-                    }
+                    px.worldHeight = sceneH;
+                    px.tileWorldW = bgMap.cellW * BgTileScale;   // engine tileSize = cell * 4
+                    px.tileWorldH = bgMap.cellH * BgTileScale;
+                    px.panX = 0f;
+                    px.panY = BgPanY;                            // -495 (W1 dump)
+                    bool isClouds = bgMap.png.Contains("_C_");   // *_Background_*_C_* = clouds
+                    px.autoScrollX = isClouds ? BgCloudScrollX : 0f;
                 }
                 return;
             }
@@ -305,17 +305,26 @@ namespace Turtix.Unity
             {
                 slicedPngs.Add(map.png);
                 var ti = AssetImporter.GetAtPath(map.png) as TextureImporter;
-                if (ti != null && (ti.spriteImportMode != SpriteImportMode.Single ||
-                                   ti.wrapMode != TextureWrapMode.Repeat ||
-                                   !Mathf.Approximately(ti.spritePixelsPerUnit, 1f)))
+                if (ti != null)
                 {
-                    ti.textureType = TextureImporterType.Sprite;
-                    ti.spriteImportMode = SpriteImportMode.Single;
-                    ti.spritePixelsPerUnit = 1;
-                    ti.wrapMode = TextureWrapMode.Repeat;
-                    ti.mipmapEnabled = false;
-                    EditorUtility.SetDirty(ti);
-                    ti.SaveAndReimport();
+                    var tis = new TextureImporterSettings();
+                    ti.ReadTextureSettings(tis);
+                    bool dirty = ti.spriteImportMode != SpriteImportMode.Single ||
+                                 ti.wrapMode != TextureWrapMode.Repeat ||
+                                 !Mathf.Approximately(ti.spritePixelsPerUnit, 1f) ||
+                                 tis.spriteMeshType != SpriteMeshType.FullRect;
+                    if (dirty)
+                    {
+                        ti.textureType = TextureImporterType.Sprite;
+                        ti.spriteImportMode = SpriteImportMode.Single;
+                        ti.spritePixelsPerUnit = 1;
+                        ti.wrapMode = TextureWrapMode.Repeat;   // seamless tiling
+                        ti.mipmapEnabled = false;
+                        tis.spriteMeshType = SpriteMeshType.FullRect;  // required for Tiled drawMode
+                        ti.SetTextureSettings(tis);
+                        EditorUtility.SetDirty(ti);
+                        ti.SaveAndReimport();
+                    }
                 }
             }
             Sprite s = AssetDatabase.LoadAssetAtPath<Sprite>(map.png);

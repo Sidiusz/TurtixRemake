@@ -84,11 +84,39 @@ function inspectNow()
       if (%o.getClassName() $= "t2dTileLayer")
       {
          echo("=== TILELAYER idx" @ %i @ " Layer=" @ %o.Layer @ " ===");
-         %o.dump();
+         echo("PAN autoPanX=" @ %o.getAutoPanX() @ " autoPanY=" @ %o.getAutoPanY());
+         echo("PANPOS panX=" @ %o.getPanPositionX() @ " panY=" @ %o.getPanPositionY());
+         echo("WRAP wrapX=" @ %o.getWrapX() @ " wrapY=" @ %o.getWrapY());
+         echo("TSIZE tileSizeX=" @ %o.getTileSizeX() @ " tileSizeY=" @ %o.getTileSizeY());
+         echo("TCOUNT tileCountX=" @ %o.getTileCountX() @ " tileCountY=" @ %o.getTileCountY());
+         echo("SIZE size=" @ %o.getSize() @ " pos=" @ %o.getPosition());
       }
    }
-   echo("=== INSPECT DONE ===");
-   quit();
+   // mount status once
+   %L8 = scene.getObject(3); %L7 = scene.getObject(4); %L6 = scene.getObject(5);
+   echo("MOUNT L8 mountedToCam=" @ %L8.getIsMounted() @ " pos=" @ %L8.getPosition());
+   echo("MOUNT L7 mountedToCam=" @ %L7.getIsMounted() @ " pos=" @ %L7.getPosition());
+   echo("MOUNT L6 mountedToCam=" @ %L6.getIsMounted() @ " pos=" @ %L6.getPosition());
+   $SweepStep = 0;
+   sweepStep();
+}
+
+function sweepStep()
+{
+   // Phase A (steps 0-4): camera FIXED at 1000 -> isolate TIME drift.
+   // Phase B (steps 5-9): camera MOVES +512/step -> isolate CAMERA effect.
+   if ($SweepStep < 5) { %cx = 1000; %phase = "A_fixedCam"; }
+   else { %cx = ($SweepStep - 5) * 512; %phase = "B_moveCam"; }
+   sceneWindow2D.setCurrentCameraPosition(%cx, 384, 1024, 768);
+   %L8 = scene.getObject(3); %L7 = scene.getObject(4); %L6 = scene.getObject(5);
+   echo("SWEEP " @ %phase @ " step=" @ $SweepStep
+      @ " | L8 panX=" @ %L8.getPanPositionX() @ " pos=" @ %L8.getPositionX()
+      @ " | L7 panX=" @ %L7.getPanPositionX() @ " pos=" @ %L7.getPositionX()
+      @ " | L6 panX=" @ %L6.getPanPositionX() @ " pos=" @ %L6.getPositionX()
+      @ " | realCamX=" @ sceneWindow2D.getCurrentCameraPosition());
+   $SweepStep++;
+   if ($SweepStep <= 9) { schedule(300, 0, "sweepStep"); }
+   else { echo("=== INSPECT DONE ==="); quit(); }
 }
 
 dumpEntry();

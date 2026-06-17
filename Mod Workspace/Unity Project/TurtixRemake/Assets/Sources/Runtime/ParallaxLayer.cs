@@ -2,71 +2,76 @@ using UnityEngine;
 
 namespace Turtix.Unity
 {
-    /// Multi-layer parallax background.
-    /// - UNIFORM-scaled (no distortion) so the square covers ~the world height + a small margin
-    ///   (slightly bigger than the play area -> you see the top edge at the world's top).
-    /// - Vertical: world-anchored (fixed), so edges show at world extremes.
-    /// - Horizontal: parallax follow of the camera (backmost moves more here per the art).
-    /// - Clouds: tile horizontally + auto-scroll independently.
+    /// World-fixed tiled background layer — 1:1 with the original t2dTileLayer.
+    /// Engine truth (W1_01 inspect dump): bg layers are NOT mounted to the camera and have
+    /// NO horizontal parallax. They sit at world pos (0,0), size = whole scene (5376x1536),
+    /// wrap X+Y, and the camera just scrolls over them. The small cell image is rendered at
+    /// 4x (engine tileSize = cellSize * 4) and tiled across the scene.
+    /// Only the clouds layer auto-pans (~10 px/s X via panPosition; engine AutoPan field = 0,
+    /// the drift is applied per-frame by plrLevel). panY is a fixed vertical texture offset.
     [ExecuteAlways]
     [RequireComponent(typeof(SpriteRenderer))]
     public class ParallaxLayer : MonoBehaviour
     {
-        [Range(0f, 1f)] public float parallaxFactor = 0.2f; // horizontal on-screen motion vs camera
-        public float autoScrollX = 0f;                      // px/s independent scroll (clouds: negative = left)
-        public bool tileX = false;                          // infinite horizontal tiling (clouds)
-        public float worldHeight = 1536f;
         public float worldWidth = 5376f;
-        public float coverMargin = 1.08f;                   // bg is this * world height (a bit bigger)
-        public float verticalAnchor = 0.5f;                 // 0=bottom .. 1=top of world for the bg center
+        public float worldHeight = 1536f;
+        public float tileWorldW = 1024f;   // engine tileSizeX (= cellW * 4)
+        public float tileWorldH = 1024f;   // engine tileSizeY (= cellH * 4)
+        public float panX = 0f;            // engine panPositionX (px)
+        public float panY = 0f;            // engine panPositionY (px) — W1 bg = -495
+        public float autoScrollX = 0f;     // px/s; clouds = 10, others 0
 
-        private Camera cam;
         private SpriteRenderer sr;
-        private float camStartX;
-        private float spriteW, spriteH;   // native (PPU=1) size
+        private float cellW, cellH;
         private float scroll;
-        private float z;
+        private bool ready;
 
         void OnEnable()
         {
             sr = GetComponent<SpriteRenderer>();
-            z = transform.position.z;
-            if (sr.sprite != null) { spriteW = sr.sprite.bounds.size.x; spriteH = sr.sprite.bounds.size.y; }
-            Acquire();
+            Setup();
         }
 
-        void Acquire()
+        void Setup()
         {
-            cam = Camera.main;
-            if (cam != null) camStartX = cam.transform.position.x;
+            if (sr == null) sr = GetComponent<SpriteRenderer>();
+            if (sr.sprite == null) { ready = false; return; }
+
+            cellW = sr.sprite.bounds.size.x;   // native px at PPU=1
+            cellH = sr.sprite.bounds.size.y;
+            if (cellW <= 0f || cellH <= 0f) { ready = false; return; }
+
+            // scale so one tile == engine tileSize; tile the sprite across world + 1-tile margin.
+            float sx = tileWorldW / cellW;
+            float sy = tileWorldH / cellH;
+            transform.localScale = new Vector3(sx, sy, 1f);
+
+            sr.drawMode = SpriteDrawMode.Tiled;
+            sr.tileMode = SpriteTileMode.Continuous;
+            sr.size = new Vector2((worldWidth + 2f * tileWorldW) / sx,
+                                  (worldHeight + 2f * tileWorldH) / sy);
+            ready = true;
+            Apply();
+        }
+
+        void Apply()
+        {
+            // world-fixed; pan offset wraps within one tile so the seam never shows.
+            float ox = Mathf.Repeat(panX + scroll, tileWorldW);
+            float oy = Mathf.Repeat(panY, tileWorldH);
+            transform.position = new Vector3(worldWidth * 0.5f - ox,
+                                             worldHeight * 0.5f - oy,
+                                             transform.position.z);
         }
 
         void LateUpdate()
         {
-            if (cam == null) { Acquire(); if (cam == null) return; }
-            if (spriteH <= 0f) { if (sr.sprite == null) return; spriteW = sr.sprite.bounds.size.x; spriteH = sr.sprite.bounds.size.y; }
-
-            // uniform cover scale: height = world height * margin (square stays square)
-            float scale = (worldHeight * coverMargin) / spriteH;
-            transform.localScale = new Vector3(scale, scale, 1f);
-
-            if (tileX)
+            if (!ready) { Setup(); if (!ready) return; }
+            if (Application.isPlaying && autoScrollX != 0f)
             {
-                sr.drawMode = SpriteDrawMode.Tiled;
-                sr.tileMode = SpriteTileMode.Continuous;
-                float viewW = cam.orthographic ? cam.orthographicSize * cam.aspect * 2f : 2000f;
-                float needNativeW = (viewW * 1.8f) / scale;     // enough native width to cover after scaling
-                sr.size = new Vector2(Mathf.Max(needNativeW, spriteW * 3f), spriteH);
+                scroll += autoScrollX * Time.deltaTime;
+                Apply();
             }
-
-            if (Application.isPlaying) scroll += autoScrollX * Time.deltaTime;
-            float scaledW = spriteW * scale;
-            if (scaledW > 0f) scroll = Mathf.Repeat(scroll, scaledW);   // wrap so clouds loop seamlessly
-
-            float camDX = cam.transform.position.x - camStartX;
-            float x = cam.transform.position.x - camDX * parallaxFactor + (tileX ? scroll : 0f);
-            float y = worldHeight * verticalAnchor;     // world-anchored vertical (fixed)
-            transform.position = new Vector3(x, y, z);
         }
     }
 }

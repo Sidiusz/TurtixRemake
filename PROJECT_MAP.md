@@ -26,7 +26,8 @@
   - `Assets/Sources/` - generated importer scripts, parsed JSON, regenerated assets
   - `Assets/Sources/OriginalAssets/Graphics/` - mirrored PNGs (377, = Content/Graphics)
   - `Assets/Sources/GeneratedData/` - Unity JSON: imagemaps, animations, tiles/, objects/
-  - `Assets/Sources/Editor/TurtixLevelImporter.cs` - Editor window: builds tile layers + objects (Y-flip, markers)
+  - `Assets/Sources/Editor/TurtixLevelImporter.cs` - Editor window: builds tile layers + objects (Y-flip, markers). BG = world-fixed tiled (engine 1:1): tileSize=cell*4, panY=-495, clouds(_C_) auto-pan 10px/s, no parallax.
+  - `Assets/Sources/Runtime/ParallaxLayer.cs` - world-fixed tiled bg layer (NOT parallax): scales cell*4, Tiled+wrap across scene, panX/Y offset, autoScrollX for clouds
   - `Assets/Sources/Scenes/` - imported .unity scenes
   - Packages: Netcode for GameObjects 2.12.0 (coop), 2d.sprite, tilemap. Unity 6000.4.6f1.
 - `Tools/` - reverse-engineering helpers
@@ -42,6 +43,7 @@
   - `prepare_unity_data.py` - resolves engine tiles + objects to Unity JSON under Assets/Sources/GeneratedData
   - `run_dump_loop.ps1` - launches Turtix repeatedly until all 60 tile dumps exist (engine crashes ~15/run)
   - `dump_main.cs` - engine dumper: objects (objdump.txt) + tiles via getTileType (tiles_engine.txt), resumable
+  - `dump_inspect.cs` - loads W1_01, dumps camera (Extent/zoom) + every t2dTileLayer's AutoPan/PanPos/Wrap/TileSize + camera sweep (pan-vs-cam/time) -> console.log. Swap into root main.cs to run.
   - NOTE: game runnable directly (Start-Process Turtix.exe, windowed); swap dumper into root main.cs first
   - `out/Level_*.objdump.txt` - engine ground-truth per-object dump (class/pos/size/layer/flip)
   - `out/Level_*.objects.json` - final placed objects: typeId/template/x/y/size/layer/flip/isPlayer
