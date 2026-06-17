@@ -22,18 +22,25 @@ namespace Turtix.Unity
         public float groundCheckDist = 8f;
         public LayerMask groundMask = ~0;
 
+        [Header("Animation")]
+        public SpriteAnimator anim;     // a176 state clips; assigned by importer
+        public string animPrefix = "a176";
+
         private Rigidbody2D rb;
         private Collider2D col;
         private SpriteRenderer sr;
         private int jumpsLeft;
         private bool jumpQueued;
         private float moveInput;
+        private bool grounded;
+        private bool usedDoubleJump;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
             sr = GetComponentInChildren<SpriteRenderer>();
+            if (anim == null) anim = GetComponentInChildren<SpriteAnimator>();
             float g = Mathf.Abs(Physics2D.gravity.y);
             rb.gravityScale = gravity / (g > 0.001f ? g : 9.81f);
             rb.freezeRotation = true;
@@ -56,6 +63,26 @@ namespace Turtix.Unity
 
             if (sr != null && Mathf.Abs(moveInput) > 0.01f)
                 sr.flipX = moveInput < 0f;
+
+            UpdateAnim();
+        }
+
+        void UpdateAnim()
+        {
+            if (anim == null) return;
+            float vy = rb.linearVelocity.y;
+            string state;
+            if (!grounded)
+            {
+                bool dbl = usedDoubleJump;
+                state = vy > 0.01f ? (dbl ? "DoubleJumpUp" : "JumpUp")
+                                   : (dbl ? "DoubleJumpDown" : "JumpDown");
+            }
+            else
+            {
+                state = Mathf.Abs(moveInput) > 0.01f ? "Move" : "Stand";
+            }
+            anim.Play(animPrefix + state);
         }
 
         void FixedUpdate()
@@ -65,12 +92,17 @@ namespace Turtix.Unity
             var v = rb.linearVelocity;
             v.x = moveInput * moveSpeed;
 
-            bool grounded = IsGrounded();
-            if (grounded && v.y <= 0.01f) jumpsLeft = maxJumps;
+            grounded = IsGrounded();
+            if (grounded && v.y <= 0.01f) { jumpsLeft = maxJumps; usedDoubleJump = false; }
 
             if (jumpQueued)
             {
-                if (jumpsLeft > 0) { v.y = jumpSpeed; jumpsLeft--; }
+                if (jumpsLeft > 0)
+                {
+                    v.y = jumpSpeed;
+                    jumpsLeft--;
+                    if (jumpsLeft < maxJumps - 1) usedDoubleJump = true;  // 2nd+ jump = double
+                }
                 jumpQueued = false;
             }
             rb.linearVelocity = v;

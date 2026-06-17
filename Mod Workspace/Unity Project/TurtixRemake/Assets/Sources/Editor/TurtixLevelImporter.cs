@@ -37,6 +37,19 @@ namespace Turtix.Unity
         }
 
         [System.Serializable]
+        public class AnimDB { public AnimData[] anims; }
+
+        [System.Serializable]
+        public class AnimData
+        {
+            public string name;
+            public string imageMap;
+            public int[] frames;
+            public int cycle;     // 1 = loop
+            public float time;    // total seconds for the full frame list
+        }
+
+        [System.Serializable]
         public class TileLevel
         {
             public string file;
@@ -382,9 +395,32 @@ namespace Turtix.Unity
                     var cc = go.AddComponent<CapsuleCollider2D>();
                     cc.size = new Vector2(56, 92);          // ~ inside the 96px sprite
                     cc.direction = CapsuleDirection2D.Vertical;
-                    go.AddComponent<TurtixPlayer>();
+
+                    // all 13 a176 state anims; TurtixPlayer drives which one plays.
+                    var pAnim = go.AddComponent<SpriteAnimator>();
+                    foreach (var an in AnimsForTemplate(o.template))
+                    {
+                        var clip = BuildClip(an);
+                        if (clip != null) pAnim.clips.Add(clip);
+                    }
+                    pAnim.playOnStart = o.template + "Stand";
+
+                    var player = go.AddComponent<TurtixPlayer>();
+                    player.anim = pAnim;
                     playerGo = go;
                     playerPos = go.transform.position;
+                }
+                else if (sprite != null)
+                {
+                    // non-player: play its default looping anim (Stand/Move) if animated.
+                    string an = DefaultAnimForImageMap(o.img);
+                    var clip = an != null ? BuildClip(an) : null;
+                    if (clip != null && clip.frames.Length > 1)
+                    {
+                        var oa = go.AddComponent<SpriteAnimator>();
+                        oa.clips.Add(clip);
+                        oa.playOnStart = an;
+                    }
                 }
             }
 
@@ -452,6 +488,68 @@ namespace Turtix.Unity
             else
                 spriteCache[key] = sprite;
             return sprite;
+        }
+
+        // ---- Animations ----
+        private Dictionary<string, AnimData> animByName;
+        private Dictionary<string, List<string>> imageMapToAnims;   // reverse: imageMap -> anim names
+
+        private void EnsureAnimsLoaded()
+        {
+            if (animByName != null) return;
+            animByName = new Dictionary<string, AnimData>();
+            imageMapToAnims = new Dictionary<string, List<string>>();
+            string p = Path.Combine(DataRoot, "animations.json");
+            if (!File.Exists(p)) { Debug.LogWarning("No animations.json"); return; }
+            var db = JsonUtility.FromJson<AnimDB>("{\"anims\":" + File.ReadAllText(p) + "}");
+            if (db?.anims == null) return;
+            foreach (var a in db.anims)
+            {
+                animByName[a.name] = a;
+                if (!imageMapToAnims.TryGetValue(a.imageMap, out var l))
+                    imageMapToAnims[a.imageMap] = l = new List<string>();
+                l.Add(a.name);
+            }
+        }
+
+        // Bake one engine animation into a runtime clip (resolves frame sprites).
+        private SpriteAnimator.Clip BuildClip(string animName)
+        {
+            EnsureAnimsLoaded();
+            if (!animByName.TryGetValue(animName, out var a) || a.frames == null || a.frames.Length == 0)
+                return null;
+            var sprites = new Sprite[a.frames.Length];
+            for (int i = 0; i < a.frames.Length; i++)
+                sprites[i] = GetSprite(a.imageMap, a.frames[i]);
+            return new SpriteAnimator.Clip
+            {
+                name = animName,
+                frames = sprites,
+                fps = a.time > 0.001f ? a.frames.Length / a.time : 10f,
+                loop = a.cycle == 1,
+            };
+        }
+
+        // Default looping anim for a placed object: the animation whose imageMap == object.img.
+        private string DefaultAnimForImageMap(string imageMap)
+        {
+            EnsureAnimsLoaded();
+            if (string.IsNullOrEmpty(imageMap)) return null;
+            if (imageMapToAnims.TryGetValue(imageMap, out var l) && l.Count > 0) return l[0];
+            return null;
+        }
+
+        // All state anims for a template (e.g. "a176" -> a176Stand/Move/JumpUp/...).
+        private List<string> AnimsForTemplate(string template)
+        {
+            EnsureAnimsLoaded();
+            var res = new List<string>();
+            if (string.IsNullOrEmpty(template)) return res;
+            foreach (var name in animByName.Keys)
+                if (name.Length > template.Length && name.StartsWith(template) &&
+                    char.IsLetter(name[template.Length]))   // next char is a state letter, not another digit
+                    res.Add(name);
+            return res;
         }
 
         private readonly Dictionary<string, ImageMapDB> imapDbCache = new();

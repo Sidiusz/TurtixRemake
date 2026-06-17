@@ -26,8 +26,9 @@
   - `Assets/Sources/` - generated importer scripts, parsed JSON, regenerated assets
   - `Assets/Sources/OriginalAssets/Graphics/` - mirrored PNGs (377, = Content/Graphics)
   - `Assets/Sources/GeneratedData/` - Unity JSON: imagemaps, animations, tiles/, objects/
-  - `Assets/Sources/Editor/TurtixLevelImporter.cs` - Editor window: builds tile layers + objects (Y-flip, markers). BG = world-fixed tiled (engine 1:1): tileSize=cell*4, panY=-495, clouds(_C_) auto-pan 10px/s, no parallax.
+  - `Assets/Sources/Editor/TurtixLevelImporter.cs` - Editor window: builds tile layers + objects (Y-flip, markers). BG = world-fixed tiled (engine 1:1): tileSize=cell*4, panY=-495, clouds(_C_) auto-pan 10px/s, no parallax. Bakes SpriteAnimator clips from animations.json: objects get default anim (img->anim reverse map), player gets all template state anims (a176Stand/Move/Jump...).
   - `Assets/Sources/Runtime/ParallaxLayer.cs` - world-fixed tiled bg layer (NOT parallax): scales cell*4, Tiled+wrap across scene, panX/Y offset, autoScrollX for clouds
+  - `Assets/Sources/Runtime/SpriteAnimator.cs` - runtime frame-cycling animator (engine t2dAnimationDatablock 1:1): named clips (frames/fps/loop), Play(name), deterministic for coop. Clips baked by importer.
   - `Assets/Sources/Scenes/` - imported .unity scenes
   - Packages: Netcode for GameObjects 2.12.0 (coop), 2d.sprite, tilemap. Unity 6000.4.6f1.
 - `Tools/` - reverse-engineering helpers
