@@ -19,8 +19,10 @@ namespace Turtix.Unity
         public int maxJumps = 2;           // double jump (Turtix has a176DoubleJump*)
 
         [Header("Ground check")]
-        public float groundCheckDist = 8f;
+        public float groundCheckDist = 10f;
         public LayerMask groundMask = ~0;
+        public float coyoteTime = 0.08f;     // grace to still jump just after leaving ground
+        public float jumpBufferTime = 0.1f;  // grace to buffer a jump pressed just before landing
 
         [Header("Animation")]
         public SpriteAnimator anim;     // a176 state clips; assigned by importer
@@ -30,10 +32,11 @@ namespace Turtix.Unity
         private Collider2D col;
         private SpriteRenderer sr;
         private int jumpsLeft;
-        private bool jumpQueued;
         private float moveInput;
         private bool grounded;
         private bool usedDoubleJump;
+        private float coyote;
+        private float jumpBuffer;
 
         void Awake()
         {
@@ -59,10 +62,11 @@ namespace Turtix.Unity
             moveInput = right - left;
 
             if (kb.spaceKey.wasPressedThisFrame || kb.upArrowKey.wasPressedThisFrame || kb.wKey.wasPressedThisFrame)
-                jumpQueued = true;
+                jumpBuffer = jumpBufferTime;
 
+            // Turtix base art faces LEFT -> mirror when moving right.
             if (sr != null && Mathf.Abs(moveInput) > 0.01f)
-                sr.flipX = moveInput < 0f;
+                sr.flipX = moveInput > 0f;
 
             UpdateAnim();
         }
@@ -93,18 +97,27 @@ namespace Turtix.Unity
             v.x = moveInput * moveSpeed;
 
             grounded = IsGrounded();
-            if (grounded && v.y <= 0.01f) { jumpsLeft = maxJumps; usedDoubleJump = false; }
-
-            if (jumpQueued)
+            if (grounded && v.y <= 0.01f)
             {
-                if (jumpsLeft > 0)
+                jumpsLeft = maxJumps;
+                usedDoubleJump = false;
+                coyote = coyoteTime;          // refresh grace window while grounded
+            }
+            else coyote -= Time.fixedDeltaTime;
+
+            if (jumpBuffer > 0f)
+            {
+                bool groundJump = coyote > 0f && jumpsLeft == maxJumps;
+                if (groundJump || jumpsLeft > 0)
                 {
                     v.y = jumpSpeed;
                     jumpsLeft--;
-                    if (jumpsLeft < maxJumps - 1) usedDoubleJump = true;  // 2nd+ jump = double
+                    if (!groundJump) usedDoubleJump = true;   // air jump = double-jump anim
+                    coyote = 0f;
+                    jumpBuffer = 0f;
                 }
-                jumpQueued = false;
             }
+            jumpBuffer -= Time.fixedDeltaTime;
             rb.linearVelocity = v;
         }
 

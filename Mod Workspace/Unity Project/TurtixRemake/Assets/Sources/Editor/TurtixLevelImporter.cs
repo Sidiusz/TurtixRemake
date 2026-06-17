@@ -192,6 +192,12 @@ namespace Turtix.Unity
                 scene = SceneManager.GetActiveScene();
             }
 
+            // Clear any previous import of this level in the active scene (avoid stacked
+            // duplicate roots -> double player, doubled static+animated layers).
+            foreach (var existing in scene.GetRootGameObjects())
+                if (existing.name == levelName)
+                    Object.DestroyImmediate(existing);
+
             var root = new GameObject(levelName);
             Undo.RegisterCreatedObjectUndo(root, "Import Turtix Level");
 
@@ -225,23 +231,66 @@ namespace Turtix.Unity
             public TileLevel level;
         }
 
+        // Slope collision polygon for a collision-tile frame (centered local coords).
+        // TODO: frames 4-7 are slope/corner shapes in Collisions.png — exact polys need an
+        // engine getTileCollisionPoly dump. Until then all cells are full boxes (merged),
+        // which already removes flat-run seam snagging.
+        private Vector2[] SlopePoly(int frame, float w, float h)
+        {
+            return null;
+        }
+
+        private PhysicsMaterial2D groundMat;
+        private PhysicsMaterial2D GetGroundMaterial()
+        {
+            if (groundMat != null) return groundMat;
+            string path = "Assets/Sources/Runtime/GroundNoFriction.physicsMaterial2D";
+            groundMat = AssetDatabase.LoadAssetAtPath<PhysicsMaterial2D>(path);
+            if (groundMat == null)
+            {
+                groundMat = new PhysicsMaterial2D("GroundNoFriction") { friction = 0f, bounciness = 0f };
+                AssetDatabase.CreateAsset(groundMat, path);
+            }
+            return groundMat;
+        }
+
         private void BuildLayer(TileLayer layer, GameObject parent)
         {
             int rows = layer.rows;
             int sortOrder = -layer.order;   // engine order: high=back. -order => back is most negative.
 
-            // collision layer: invisible in-game -> add BoxCollider2D per cell, no sprite.
+            // collision layer: invisible. Full-box cells (frame 0/1) merge into a single
+            // CompositeCollider2D so flat runs are seamless (no snagging on tile seams).
+            // Slope cells (frame >= 4) get their own collider shape.
             if (layer.collision)
             {
+                var body = parent.AddComponent<Rigidbody2D>();
+                body.bodyType = RigidbodyType2D.Static;
+                var comp = parent.AddComponent<CompositeCollider2D>();
+                comp.geometryType = CompositeCollider2D.GeometryType.Polygons;
+                comp.sharedMaterial = GetGroundMaterial();
+
                 foreach (var cell in layer.cells)
                 {
-                    var col = new GameObject($"col_{cell.x}_{cell.y}");
+                    var col = new GameObject($"col_{cell.x}_{cell.y}_f{cell.frame}");
                     col.transform.SetParent(parent.transform, false);
                     float cxp = cell.x * layer.tileW + layer.tileW * 0.5f;
                     float cyp = (rows - 1 - cell.y) * layer.tileH + layer.tileH * 0.5f;
                     col.transform.localPosition = new Vector3(cxp, cyp, 0);
-                    var bc = col.AddComponent<BoxCollider2D>();
-                    bc.size = new Vector2(layer.tileW, layer.tileH);
+
+                    Vector2[] slope = SlopePoly(cell.frame, layer.tileW, layer.tileH);
+                    if (slope != null)
+                    {
+                        var pc = col.AddComponent<PolygonCollider2D>();
+                        pc.points = slope;
+                        pc.compositeOperation = Collider2D.CompositeOperation.Merge;
+                    }
+                    else
+                    {
+                        var bc = col.AddComponent<BoxCollider2D>();
+                        bc.size = new Vector2(layer.tileW, layer.tileH);
+                        bc.compositeOperation = Collider2D.CompositeOperation.Merge;
+                    }
                 }
                 return;
             }
@@ -395,6 +444,7 @@ namespace Turtix.Unity
                     var cc = go.AddComponent<CapsuleCollider2D>();
                     cc.size = new Vector2(56, 92);          // ~ inside the 96px sprite
                     cc.direction = CapsuleDirection2D.Vertical;
+                    cc.sharedMaterial = GetGroundMaterial(); // 0 friction -> no wall-stick
 
                     // all 13 a176 state anims; TurtixPlayer drives which one plays.
                     var pAnim = go.AddComponent<SpriteAnimator>();
