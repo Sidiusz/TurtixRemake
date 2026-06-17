@@ -2,33 +2,38 @@ using UnityEngine;
 
 namespace Turtix.Unity
 {
-    /// World-fixed tiled background layer — 1:1 with the original t2dTileLayer.
-    /// Engine truth (W1_01 inspect dump): bg layers are NOT mounted to the camera and have
-    /// NO horizontal parallax. They sit at world pos (0,0), size = whole scene (5376x1536),
-    /// wrap X+Y, and the camera just scrolls over them. The small cell image is rendered at
-    /// 4x (engine tileSize = cellSize * 4) and tiled across the scene.
-    /// Only the clouds layer auto-pans (~10 px/s X via panPosition; engine AutoPan field = 0,
-    /// the drift is applied per-frame by plrLevel). panY is a fixed vertical texture offset.
+    /// Camera-relative parallax background layer (skybox-style depth).
+    /// Three layers per world: back (far, moves least), clouds (middle, also auto-drifts),
+    /// near (moves a bit more). Each layer follows the camera by parallaxFactor:
+    ///   factor 0 = locked to camera (infinitely far, never moves on screen)
+    ///   factor 1 = moves with the world (like foreground)
+    /// Small factor => the layer appears far away and barely shifts as the player moves.
+    /// Layers tile horizontally (and cover vertically) so they always fill the viewport.
     [ExecuteAlways]
     [RequireComponent(typeof(SpriteRenderer))]
     public class ParallaxLayer : MonoBehaviour
     {
-        public float worldWidth = 5376f;
+        [Range(0f, 1f)] public float parallaxFactor = 0.2f;   // horizontal depth (0=far/locked .. 1=world)
+        [Range(0f, 1f)] public float parallaxFactorY = 0f;    // vertical depth (0=fixed band)
+        public float autoScrollX = 0f;                        // px/s independent drift (clouds)
+        public float tileWorldW = 1024f;                      // one tile width in world px (cell*scale)
+        public float tileWorldH = 1024f;
         public float worldHeight = 1536f;
-        public float tileWorldW = 1024f;   // engine tileSizeX (= cellW * 4)
-        public float tileWorldH = 1024f;   // engine tileSizeY (= cellH * 4)
-        public float panX = 0f;            // engine panPositionX (px)
-        public float panY = 0f;            // engine panPositionY (px) — W1 bg = -495
-        public float autoScrollX = 0f;     // px/s; clouds = 10, others 0
+        public float bandCenterY = 768f;                      // fixed vertical center of the band (world px)
 
+        private Camera cam;
         private SpriteRenderer sr;
         private float cellW, cellH;
+        private float camStartX, camStartY;
+        private float baseX, baseY;
         private float scroll;
+        private float z;
         private bool ready;
 
         void OnEnable()
         {
             sr = GetComponent<SpriteRenderer>();
+            z = transform.position.z;
             Setup();
         }
 
@@ -36,42 +41,51 @@ namespace Turtix.Unity
         {
             if (sr == null) sr = GetComponent<SpriteRenderer>();
             if (sr.sprite == null) { ready = false; return; }
-
-            cellW = sr.sprite.bounds.size.x;   // native px at PPU=1
+            cellW = sr.sprite.bounds.size.x;
             cellH = sr.sprite.bounds.size.y;
             if (cellW <= 0f || cellH <= 0f) { ready = false; return; }
 
-            // scale so one tile == engine tileSize; tile the sprite across world + 1-tile margin.
             float sx = tileWorldW / cellW;
             float sy = tileWorldH / cellH;
             transform.localScale = new Vector3(sx, sy, 1f);
 
             sr.drawMode = SpriteDrawMode.Tiled;
             sr.tileMode = SpriteTileMode.Continuous;
-            sr.size = new Vector2((worldWidth + 2f * tileWorldW) / sx,
-                                  (worldHeight + 2f * tileWorldH) / sy);
+            AcquireCam();
             ready = true;
-            Apply();
         }
 
-        void Apply()
+        void AcquireCam()
         {
-            // world-fixed; pan offset wraps within one tile so the seam never shows.
-            float ox = Mathf.Repeat(panX + scroll, tileWorldW);
-            float oy = Mathf.Repeat(panY, tileWorldH);
-            transform.position = new Vector3(worldWidth * 0.5f - ox,
-                                             worldHeight * 0.5f - oy,
-                                             transform.position.z);
+            cam = Camera.main;
+            if (cam == null) return;
+            camStartX = cam.transform.position.x;
+            camStartY = cam.transform.position.y;
+            baseX = cam.transform.position.x;
+            baseY = bandCenterY;
         }
 
         void LateUpdate()
         {
             if (!ready) { Setup(); if (!ready) return; }
-            if (Application.isPlaying && autoScrollX != 0f)
-            {
-                scroll += autoScrollX * Time.deltaTime;
-                Apply();
-            }
+            if (cam == null) { AcquireCam(); if (cam == null) return; }
+
+            // size the tiled quad to cover the viewport (+ margin) at all times.
+            float viewW = cam.orthographic ? cam.orthographicSize * cam.aspect * 2f : 2048f;
+            float viewH = cam.orthographic ? cam.orthographicSize * 2f : 1536f;
+            float sx = transform.localScale.x, sy = transform.localScale.y;
+            sr.size = new Vector2((viewW + 2f * tileWorldW) / sx, (Mathf.Max(viewH, worldHeight) + 2f * tileWorldH) / sy);
+
+            if (Application.isPlaying) scroll += autoScrollX * Time.deltaTime;
+            scroll = Mathf.Repeat(scroll, tileWorldW);
+
+            float camDX = cam.transform.position.x - camStartX;
+            float camDY = cam.transform.position.y - camStartY;
+            // keep the tiled quad centred on the camera, shifted by the parallax remainder so
+            // content drifts slower than the world; wrap keeps it seamless.
+            float x = cam.transform.position.x - Mathf.Repeat(camDX * (1f - parallaxFactor) - scroll, tileWorldW);
+            float y = parallaxFactorY > 0f ? (baseY + camDY * parallaxFactorY) : bandCenterY;
+            transform.position = new Vector3(x, y, z);
         }
     }
 }

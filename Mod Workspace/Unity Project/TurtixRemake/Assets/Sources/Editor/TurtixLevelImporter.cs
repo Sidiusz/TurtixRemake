@@ -15,10 +15,23 @@ namespace Turtix.Unity
         private const string DataRoot = "Assets/Sources/GeneratedData";
         private const string ScenesRoot = "Assets/Sources/Scenes";
 
-        // Background engine constants (from W1_01 inspect dump). Refine per-world later.
-        private const float BgTileScale = 4f;        // engine bg tileSize = cellSize * 4
-        private const float BgPanY = -495f;          // bg panPositionY vertical offset
-        private const float BgCloudScrollX = 10f;    // clouds auto-pan px/s (panX +10/s)
+        // Background constants. tileScale/cloud-drift from the engine dump; parallax factors
+        // and band placement are tunable (adjust on the ParallaxLayer components to taste).
+        private const float BgTileScale = 4f;        // bg cell rendered at 4x
+        private const float BgCloudScrollX = 10f;    // clouds auto-pan px/s
+        private const float BgBandCenter = 0.5f;     // vertical band center as fraction of scene height
+
+        // Parallax depth by engine layer order: higher order = further back = moves least.
+        private static float BgParallaxFactor(int order)
+        {
+            switch (order)
+            {
+                case 8: return 0.12f;   // back (far)
+                case 7: return 0.25f;   // clouds (middle)
+                case 6: return 0.40f;   // near
+                default: return 0.30f;
+            }
+        }
 
         [System.Serializable]
         public class ImageMapDB
@@ -295,10 +308,10 @@ namespace Turtix.Unity
                 return;
             }
 
-            // Background layers — 1:1 with engine t2dTileLayer (W1_01 inspect dump):
-            // world-fixed, wrap X+Y, NOT mounted, NO parallax. Camera scrolls over them.
-            // Engine renders the small cell image at 4x (tileSize = cellSize * 4) and tiles it
-            // across the whole scene. panY = -495 vertical offset. Clouds (_C_) auto-pan ~10px/s X.
+            // Background layers — camera-relative parallax (skybox depth).
+            // Three layers per world: back (far, lowest order-number-on-screen = highest engine
+            // order, moves least), clouds (middle, auto-drift), near (moves a bit more).
+            // Each tiles to fill the viewport; parallaxFactor sets the depth (small = far).
             if (layer.background)
             {
                 float sceneW = layer.cols * layer.tileW;
@@ -316,14 +329,14 @@ namespace Turtix.Unity
                     bsr.sprite = sprite;
                     bsr.sortingOrder = sortOrder;
 
-                    var px = bgo.AddComponent<ParallaxLayer>();
-                    px.worldWidth = sceneW;
-                    px.worldHeight = sceneH;
-                    px.tileWorldW = bgMap.cellW * BgTileScale;   // engine tileSize = cell * 4
-                    px.tileWorldH = bgMap.cellH * BgTileScale;
-                    px.panX = 0f;
-                    px.panY = BgPanY;                            // -495 (W1 dump)
                     bool isClouds = bgMap.png.Contains("_C_");   // *_Background_*_C_* = clouds
+                    var px = bgo.AddComponent<ParallaxLayer>();
+                    px.worldHeight = sceneH;
+                    px.tileWorldW = bgMap.cellW * BgTileScale;   // cell rendered at 4x
+                    px.tileWorldH = bgMap.cellH * BgTileScale;
+                    px.bandCenterY = sceneH * BgBandCenter;      // vertical band placement
+                    px.parallaxFactor = BgParallaxFactor(layer.order);
+                    px.parallaxFactorY = 0f;                     // fixed vertical band
                     px.autoScrollX = isClouds ? BgCloudScrollX : 0f;
                 }
                 return;
