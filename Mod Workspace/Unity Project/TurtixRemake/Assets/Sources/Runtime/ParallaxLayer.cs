@@ -2,30 +2,25 @@ using UnityEngine;
 
 namespace Turtix.Unity
 {
-    /// Camera-relative parallax background layer (skybox-style depth).
-    /// Three layers per world: back (far, moves least), clouds (middle, also auto-drifts),
-    /// near (moves a bit more). Each layer follows the camera by parallaxFactor:
-    ///   factor 0 = locked to camera (infinitely far, never moves on screen)
-    ///   factor 1 = moves with the world (like foreground)
-    /// Small factor => the layer appears far away and barely shifts as the player moves.
-    /// Layers tile horizontally (and cover vertically) so they always fill the viewport.
+    /// Simple (non-tiled) parallax background layer. One sprite, scaled to fill the camera
+    /// viewport, positioned in world space and blended toward the camera by a parallax factor:
+    ///   factor 0 = stays centred on the camera (static on screen = infinitely far)
+    ///   factor 1 = stuck to a world anchor (moves fully with the world = foreground)
+    /// Separate X/Y factors. Back layer: factorX ~0 (static horizontally), factorY a bit more.
+    /// Near layer: both larger. Clouds also auto-drift horizontally.
     [ExecuteAlways]
     [RequireComponent(typeof(SpriteRenderer))]
     public class ParallaxLayer : MonoBehaviour
     {
-        [Range(0f, 1f)] public float parallaxFactor = 0.2f;   // horizontal depth (0=far/locked .. 1=world)
-        [Range(0f, 1f)] public float parallaxFactorY = 0f;    // vertical depth (0=fixed band)
-        public float autoScrollX = 0f;                        // px/s independent drift (clouds)
-        public float tileWorldW = 1024f;                      // one tile width in world px (cell*scale)
-        public float tileWorldH = 1024f;
-        public float worldHeight = 1536f;
-        public float bandCenterY = 768f;                      // fixed vertical center of the band (world px)
+        [Range(0f, 1f)] public float parallaxX = 0f;
+        [Range(0f, 1f)] public float parallaxY = 0.2f;
+        public float autoScrollX = 0f;        // px/s independent drift (clouds)
+        public float coverMargin = 1.12f;     // fill viewport * this (room for parallax shift)
+        public Vector2 anchor = new Vector2(2688f, 768f);  // world anchor (scene center)
 
         private Camera cam;
         private SpriteRenderer sr;
         private float cellW, cellH;
-        private float camStartX, camStartY;
-        private float baseX, baseY;
         private float scroll;
         private float z;
         private bool ready;
@@ -41,50 +36,30 @@ namespace Turtix.Unity
         {
             if (sr == null) sr = GetComponent<SpriteRenderer>();
             if (sr.sprite == null) { ready = false; return; }
-            cellW = sr.sprite.bounds.size.x;
-            cellH = sr.sprite.bounds.size.y;
-            if (cellW <= 0f || cellH <= 0f) { ready = false; return; }
-
-            float sx = tileWorldW / cellW;
-            float sy = tileWorldH / cellH;
-            transform.localScale = new Vector3(sx, sy, 1f);
-
-            sr.drawMode = SpriteDrawMode.Tiled;
-            sr.tileMode = SpriteTileMode.Continuous;
-            AcquireCam();
-            ready = true;
-        }
-
-        void AcquireCam()
-        {
+            sr.drawMode = SpriteDrawMode.Simple;
+            cellW = sr.sprite.rect.width / sr.sprite.pixelsPerUnit;
+            cellH = sr.sprite.rect.height / sr.sprite.pixelsPerUnit;
             cam = Camera.main;
-            if (cam == null) return;
-            camStartX = cam.transform.position.x;
-            camStartY = cam.transform.position.y;
-            baseX = cam.transform.position.x;
-            baseY = bandCenterY;
+            ready = cellW > 0f && cellH > 0f;
         }
 
         void LateUpdate()
         {
             if (!ready) { Setup(); if (!ready) return; }
-            if (cam == null) { AcquireCam(); if (cam == null) return; }
+            if (cam == null) { cam = Camera.main; if (cam == null) return; }
 
-            // size the tiled quad to cover the viewport (+ margin) at all times.
-            float viewW = cam.orthographic ? cam.orthographicSize * cam.aspect * 2f : 2048f;
+            // fill the viewport (+margin) — Simple stretch, no tiling.
             float viewH = cam.orthographic ? cam.orthographicSize * 2f : 1536f;
-            float sx = transform.localScale.x, sy = transform.localScale.y;
-            sr.size = new Vector2((viewW + 2f * tileWorldW) / sx, (Mathf.Max(viewH, worldHeight) + 2f * tileWorldH) / sy);
+            float viewW = cam.orthographic ? viewH * cam.aspect : 2048f;
+            transform.localScale = new Vector3(viewW * coverMargin / cellW,
+                                               viewH * coverMargin / cellH, 1f);
 
             if (Application.isPlaying) scroll += autoScrollX * Time.deltaTime;
-            scroll = Mathf.Repeat(scroll, tileWorldW);
 
-            float camDX = cam.transform.position.x - camStartX;
-            float camDY = cam.transform.position.y - camStartY;
-            // keep the tiled quad centred on the camera, shifted by the parallax remainder so
-            // content drifts slower than the world; wrap keeps it seamless.
-            float x = cam.transform.position.x - Mathf.Repeat(camDX * (1f - parallaxFactor) - scroll, tileWorldW);
-            float y = parallaxFactorY > 0f ? (baseY + camDY * parallaxFactorY) : bandCenterY;
+            float camX = cam.transform.position.x;
+            float camY = cam.transform.position.y;
+            float x = camX * (1f - parallaxX) + anchor.x * parallaxX + scroll;
+            float y = camY * (1f - parallaxY) + anchor.y * parallaxY;
             transform.position = new Vector3(x, y, z);
         }
     }

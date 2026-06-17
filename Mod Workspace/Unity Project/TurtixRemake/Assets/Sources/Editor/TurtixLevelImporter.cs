@@ -15,22 +15,19 @@ namespace Turtix.Unity
         private const string DataRoot = "Assets/Sources/GeneratedData";
         private const string ScenesRoot = "Assets/Sources/Scenes";
 
-        // Background constants. tileScale/cloud-drift from the engine dump; parallax factors
-        // and band placement are tunable (adjust on the ParallaxLayer components to taste).
-        private const float BgTileScale = 4f;        // bg cell rendered at 4x
+        // Background tunables. cloud-drift from the engine dump; parallax factors are visual
+        // guesses (factor 0 = static on screen, 1 = moves with world) — dial on the components.
         private const float BgCloudScrollX = 10f;    // clouds auto-pan px/s
-        private const float BgBandCenter = 0.5f;     // vertical band center as fraction of scene height
+        private const float BgBandCenter = 0.5f;     // vertical band center (fraction of scene height)
 
-        // Parallax depth by engine layer order: higher order = further back = moves least.
-        private static float BgParallaxFactor(int order)
+        // Higher engine order = further back. Back: static-X, mild-Y. Near: stronger both.
+        private static float BgParallaxX(int order)
         {
-            switch (order)
-            {
-                case 8: return 0.12f;   // back (far)
-                case 7: return 0.25f;   // clouds (middle)
-                case 6: return 0.40f;   // near
-                default: return 0.30f;
-            }
+            switch (order) { case 8: return 0.00f; case 7: return 0.06f; case 6: return 0.22f; default: return 0.1f; }
+        }
+        private static float BgParallaxY(int order)
+        {
+            switch (order) { case 8: return 0.20f; case 7: return 0.32f; case 6: return 0.50f; default: return 0.3f; }
         }
 
         [System.Serializable]
@@ -319,10 +316,9 @@ namespace Turtix.Unity
                 return;
             }
 
-            // Background layers — camera-relative parallax (skybox depth).
-            // Three layers per world: back (far, lowest order-number-on-screen = highest engine
-            // order, moves least), clouds (middle, auto-drift), near (moves a bit more).
-            // Each tiles to fill the viewport; parallaxFactor sets the depth (small = far).
+            // Background layers — Simple (non-tiled) sprites scaled to fill the viewport,
+            // world-space parallax. back (order 8): static-X, mild-Y; clouds (7): + drift;
+            // near (order 6): stronger both axes.
             if (layer.background)
             {
                 float sceneW = layer.cols * layer.tileW;
@@ -338,16 +334,14 @@ namespace Turtix.Unity
 
                     var bsr = bgo.AddComponent<SpriteRenderer>();
                     bsr.sprite = sprite;
+                    bsr.drawMode = SpriteDrawMode.Simple;
                     bsr.sortingOrder = sortOrder;
 
-                    bool isClouds = bgMap.png.Contains("_C_");   // *_Background_*_C_* = clouds
+                    bool isClouds = bgMap.png.Contains("_C_");
                     var px = bgo.AddComponent<ParallaxLayer>();
-                    px.worldHeight = sceneH;
-                    px.tileWorldW = bgMap.cellW * BgTileScale;   // cell rendered at 4x
-                    px.tileWorldH = bgMap.cellH * BgTileScale;
-                    px.bandCenterY = sceneH * BgBandCenter;      // vertical band placement
-                    px.parallaxFactor = BgParallaxFactor(layer.order);
-                    px.parallaxFactorY = 0f;                     // fixed vertical band
+                    px.anchor = new Vector2(sceneW * 0.5f, sceneH * BgBandCenter);
+                    px.parallaxX = BgParallaxX(layer.order);
+                    px.parallaxY = BgParallaxY(layer.order);
                     px.autoScrollX = isClouds ? BgCloudScrollX : 0f;
                 }
                 return;
@@ -396,7 +390,7 @@ namespace Turtix.Unity
                     var tis = new TextureImporterSettings();
                     ti.ReadTextureSettings(tis);
                     bool dirty = ti.spriteImportMode != SpriteImportMode.Single ||
-                                 ti.wrapMode != TextureWrapMode.Repeat ||
+                                 ti.wrapMode != TextureWrapMode.Clamp ||
                                  !Mathf.Approximately(ti.spritePixelsPerUnit, 1f) ||
                                  tis.spriteMeshType != SpriteMeshType.FullRect;
                     if (dirty)
@@ -404,9 +398,9 @@ namespace Turtix.Unity
                         ti.textureType = TextureImporterType.Sprite;
                         ti.spriteImportMode = SpriteImportMode.Single;
                         ti.spritePixelsPerUnit = 1;
-                        ti.wrapMode = TextureWrapMode.Repeat;   // seamless tiling
+                        ti.wrapMode = TextureWrapMode.Clamp;    // Simple stretch, no edge repeat
                         ti.mipmapEnabled = false;
-                        tis.spriteMeshType = SpriteMeshType.FullRect;  // required for Tiled drawMode
+                        tis.spriteMeshType = SpriteMeshType.FullRect;  // full quad, no alpha trim
                         ti.SetTextureSettings(tis);
                         EditorUtility.SetDirty(ti);
                         ti.SaveAndReimport();
@@ -452,7 +446,14 @@ namespace Turtix.Unity
                 sr.sortingOrder = 200 + o.layer;
 
                 Sprite sprite = string.IsNullOrEmpty(o.img) ? null : GetSprite(o.img, o.frame);
-                if (sprite != null) sr.sprite = sprite;
+                if (sprite != null)
+                {
+                    sr.sprite = sprite;
+                    // engine renders each object at its size field -> scale sprite to (sx,sy).
+                    Vector2 nat = sprite.bounds.size;
+                    if (nat.x > 0 && nat.y > 0 && o.sx > 0 && o.sy > 0)
+                        go.transform.localScale = new Vector3(o.sx / nat.x, o.sy / nat.y, 1f);
+                }
                 else
                 {
                     sr.sprite = GetMarkerSprite();
